@@ -6,7 +6,7 @@ from django.db import models
 class CommentModel(models.Model):
     name = models.CharField(max_length=100)
     comment = models.CharField(max_length=300, default='')
-    test = models.ForeignKey('BlogModel', related_name='blog', on_delete=models.DO_NOTHING, null=True)
+    test = models.ForeignKey('BlogModel', related_name='blog', on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         return f'{self.name}, {self.test}'
